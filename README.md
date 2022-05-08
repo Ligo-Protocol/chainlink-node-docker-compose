@@ -30,16 +30,16 @@ Default credentials:
 
 2. From the menus on the top, go to Bridge and create a bridge.
 
-* Give any name for the bridge
+* Give any name for the bridge (You will need it later in job spec).
 * Check your localhost ip using ```ipconfig``` as docker struggles to understand localhost. 
-* There must be your 'wlp6s0' or similar with 'inet value' as your IP address.
+* There must be your 'wlp6s0' or similar with 'inet' value as your IP address.
 * Set it as the Bridge link. I have set it as http://192.168.254.120/8080 where the external adapter is running.
 
-3. Follow https://docs.chain.link/docs/fulfilling-requests/ for setting a job request. Or copy paste the odometer_job.txt(uploading soon) for test.
+3. Copy paste the [odometer_job.txt](https://github.com/Ligo-Protocol/chainlink-node-docker-compose/blob/main/odometer_job.txt) for test. OR Follow https://docs.chain.link/docs/fulfilling-requests/ for setting a job request
 
-4. Go through https://docs.chain.link/docs/jobs/ for your preferred job type. (Non need to go through this if working with odometer_job.txt)
+4. Go through https://docs.chain.link/docs/jobs/ for your preferred job type. (No need to go through this if working with odometer_job.txt)
 
-7. Mention the bridge name that you made earlier in the job.
+7. Change the bridge name to that you made earlier (default=hackathon).
 
 8. Recheck your Oracle address and bridge name, then Run the job.
 
