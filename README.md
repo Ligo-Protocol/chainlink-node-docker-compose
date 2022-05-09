@@ -43,7 +43,7 @@ Default credentials:
 
 7. Change the bridge name to that you made earlier (default=hackathon).
 
-8. Change Oracle address to the one you deployed. If not deployed yet, check [this]().
+8. Change Oracle address on top and bottom of the job spec to the oracle you deployed. If not deployed yet, check [this](https://github.com/Ligo-Protocol/api-smart-contract/blob/main/README.md).
 
 9. Recheck your Oracle address and bridge name, then Run the job.
 
