@@ -24,6 +24,8 @@ Default credentials:
 - password: `Admin@123`
 - wallet password: `Admin@123`
 
+4. Go to keys from the menu and Send some ether to your Regular node address. 
+
 # How to run a job in the node
 
 1. Run your [External Adapter](https://github.com/Ligo-Protocol/external-adapter-js). 
@@ -41,5 +43,7 @@ Default credentials:
 
 7. Change the bridge name to that you made earlier (default=hackathon).
 
-8. Recheck your Oracle address and bridge name, then Run the job.
+8. Change Oracle address to the one you deployed. If not deployed yet, check [this]().
+
+9. Recheck your Oracle address and bridge name, then Run the job.
 
