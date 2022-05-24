@@ -13,13 +13,14 @@ observationSource = """
     decode_cbor  [type=cborparse data="$(decode_log.data)"]
     fetch        [type=bridge name=ligo requestData="{\\"id\\":$(jobSpec.externalJobID), \\"data\\" : {\\"vehicleId\\": $(decode_cbor.vehicleId) , \\"encToken\\": $(decode_cbor.encToken) }}"]
     parse        [type=jsonparse path="data,distance" data="$(fetch)"]
-    encode_data  [type=ethabiencode abi="(uint256 value)" data="{ \\"value\\": $(parse) }"]
+    multiply [type="multiply" input="$(parse)" times=1000]
+    encode_data  [type=ethabiencode abi="(uint256 value)" data="{ \\"value\\": $(multiply) }"]
     encode_tx    [type=ethabiencode
                   abi="fulfillOracleRequest(bytes32 requestId, uint256 payment, address callbackAddress, bytes4 callbackFunctionId, uint256 expiration, bytes32 data)"
                   data="{\\"requestId\\": $(decode_log.requestId), \\"payment\\": $(decode_log.payment), \\"callbackAddress\\": $(decode_log.callbackAddr), \\"callbackFunctionId\\": $(decode_log.callbackFunctionId), \\"expiration\\": $(decode_log.cancelExpiration), \\"data\\": $(encode_data)}"
                  ]
     submit_tx    [type=ethtx to="0x7caBbcCAa965F3466387C001c3154BD69cA26AF5" data="$(encode_tx)"]
 
-    decode_log -> decode_cbor -> fetch -> parse -> encode_data -> encode_tx -> submit_tx
+    decode_log -> decode_cbor -> fetch -> parse -> multiply -> encode_data -> encode_tx -> submit_tx
 """
 
