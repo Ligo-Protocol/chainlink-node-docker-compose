@@ -1,6 +1,6 @@
 # How to use
 
-1. Review `chainlink.env` and adapt accordingly. The committed environment file uses Kovan testnet. Also, the example uses a wss infura project url.
+1. Review `chainlink.env` and adapt accordingly. The committed environment file uses Rinkeby testnet. Also, the example uses a wss infura project url.
 
 2. Build and run with docker-compose
 
